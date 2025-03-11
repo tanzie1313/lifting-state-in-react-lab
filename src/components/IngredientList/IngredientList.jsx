@@ -1,18 +1,18 @@
 // src/components/IngredientList/IngredientList.jsx
 
 import React from 'react';
+import Ingredient from '../Ingredient/Ingredient.jsx';
 
 const IngredientList = (props) => {
   return (
     <ul>
       {props.ingredients.map((ingredient, index) => (
-        <li
+        <Ingredient
           key={index}
-          style={{ backgroundColor: ingredient.color }}
+          ingredient={ingredient}
           onClick={() => props.addToBurger(ingredient)}
-        >
-          {ingredient.name}
-        </li>
+          buttonLabel="+"
+        />
       ))}
     </ul>
   );
